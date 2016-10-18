@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock%} 
+
+{% block content %}
+<div class="container_12">	
+      <div class="grid_8">
+        <h2 class="top-1 p3">Terminos y Condiciones</h2>
+        <div class="wrap">
+        	
+            <div class="extra-wrap">
+            	<p class="color-1 p6">Los participantes del torneo deberán portar los siguientes documentos: </p>
+           		<p class="color-1 p6">Documento de Identificación</p>
+                <p class="color-1 p6">Seguro Médico</p>
+                <p class="color-1 p6" align="justify">En caso de ser menor de edad, el deportista tendrá que presentar una carta de autorización firmada por sus padres, si no están presentes: su acudiente responsable</p>
+                <p class="color-1 p6" align="justify">Los organizadores del evento no se hacen responsables de ningún tipo de accidente. Al ser un deporte de alto riesgo, es responsabilidad del deportista conocer los riesgos que la escalada deportiva conlleva. La organización no se hace responsable por el uso indebido del material de seguridad; sin embargo se proporcionarán únicamente las siguientes medidas de seguridad en caso de un accidente: Servicio de Primeros Auxilios. Transporte hasta el centro de salud más cercano.</p>
+            </div>
+        </div>
+
+                
+      </div>
+      <div class="grid_4">
+        <div class="left-1">
+            <h2 class="top-1 p3">Registre Sus Datos</h2>
+            <form  class="form-1 bot-2" method="POST">
+            {% csrf_token %}
+             <div>
+                    {% if error %}
+                        <label><p style="font-size:13pt;color:black;background-color:blue;border:2px ;padding:0.5em 1.5em;">Error, Seleccione una categoria</label>
+                    {% endif %}
+                    <label> Categoria: </label>
+                    {{ formulario.categoria }}   
+                </div>
+                <div>
+                    <label>Nombre Cordada</label>
+                    {{ formulario.nombre_cordada}}  
+                </div>
+
+                <div>
+                    <label>Escalador Uno </label>
+                    {{ formulario.escalador_uno }}  
+                </div>
+                 <div>
+                    <label>Escalador Dos</label>
+                    {{ formulario.escalador_dos }}  
+                </div>
+                <div>
+                    <label> Numero de Contacto </label>
+                    {{ formulario.numero_contacto }}   
+                </div>
+
+                
+                <div>
+                <br>
+                    <label> <p align="justify"><B> AL HACER CLICK EN EL BOTON ACEPTAS LOS TERMINOS Y CONDICIONES </B></label>
+                      
+                </div>
+                <button id="boton_registro"  style="font-size:13pt;color:white;background-color:#0099ff;border:2px ;padding:0.5em 1.5em; cursor:pointer "> Enviar </button>
+                
+                
+                <div class="clear"></div>
+            </form>
+            
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>  
+
+    <script type="text/javascript">
+    
+    </script>
+{% endblock%}

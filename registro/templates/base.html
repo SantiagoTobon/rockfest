@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> {% block title %} FestRoc {% endblock %} </title>
+	 <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/grid_12.css">
+    <link rel="stylesheet" href="/static/css/slider-2.css">
+    <link rel="stylesheet" href="/static/css/jqtransform.css">
+    <script src="/static/js/jquery-1.7.min.js"></script>
+    <script src="/static/js/jquery.easing.1.3.js"></script>
+    <script src="/static/js/cufon-yui.js"></script>
+    <script src="/static/js/vegur_400.font.js"></script>
+    <script src="/static/js/Vegur_bold_700.font.js"></script>
+    <script src="/static/js/cufon-replace.js"></script>
+    <script src="/static/js/tms-0.4.x.js"></script>
+    <script src="/static/js/jquery.jqtransform.js"></script>
+    <script src="/static/js/FF-cash.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.form-1').jqTransform();                     
+            $('.slider')._TMS({
+                show:0,
+                pauseOnHover:true,
+                prevBu:'.prev',
+                nextBu:'.next',
+                playBu:false,
+                duration:1000,
+                preset:'fade',
+                pagination:true,
+                pagNums:false,
+                slideshow:7000,
+                numStatus:false,
+                banners:false,
+                waitBannerAnimation:false,
+                progressBar:false
+            })      
+        });
+    </script>
+</head>
+<body>
+
+    <div class="main">
+<!--==============================header=================================-->
+    <header>
+    <div>
+        <h1><a href="index.html"><img src="https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/14595579_10209691236350113_1694607316585636965_n.jpg?oh=f89033624b4af2528259177a6ec74d84&oe=5899EDFA" alt=""></a></h1>
+        <br><br><br>
+
+       
+        <div id="slide" align="center" alt = "250px">        
+            <div class="slider" >
+                <ul class="items">
+                    <li><img src="https://scontent-mia1-2.xx.fbcdn.net/t31.0-8/14753671_10209691150627970_5625412844271387487_o.jpg" alt="" /></li>
+                    <li><img src="https://scontent-mia1-2.xx.fbcdn.net/t31.0-8/14715629_10209691150667971_8420673548050278951_o.jpg" alt="" /></li>
+                    <li><img src="https://scontent-mia1-2.xx.fbcdn.net/t31.0-8/14691888_10209691151227985_417607144521567323_o.jpg" alt="" /></li>
+                    <li><img src="https://scontent-mia1-2.xx.fbcdn.net/t31.0-8/14715002_10209691150587969_3044547852294930579_o.jpg"></li>
+                </ul>
+            </div>  
+            <a href="#" class="prev"></a><a href="#" class="next"></a>
+        </div>
+        <nav>
+            <ul class="menu" align="left">
+                <li><a href="{% url home %}">Inicio</a></li>
+                <li><a href="{% url metodologia %}">Metodologia</a></li>
+                <li><a href="{% url patrocinadores %}">Patrocinadores</a></li>
+                <li><a href="{% url preinscripcion %}">Preinscripcion</a></li>
+            </ul>
+        </nav>
+    </div>
+</header> 
+           <section id="content"><div class="ic"></div>
+            	{% block content %} 
+
+            	{% endblock %}
+            </section>
+    </div>
+     <footer>
+        <p>© 2012 Real Estate</p>
+        <p><a rel="nofollow" href="http://templatemonster.com" target="_blank">Website Template</a> by TemplateMonster.com</p>
+        <p>Busque m&aacute;s plantillas web gratis <a href="http://www.mejoresplantillasgratis.es" target="_blank">en MPG.es</a>.</p>
+    </footer>   
+<script>
+    Cufon.now();
+</script>
+</body>
+</html>
